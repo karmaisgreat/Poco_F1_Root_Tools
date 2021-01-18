@@ -1,0 +1,7 @@
+To gain root access, follow the steps below to flash Magisk Module to learn the root access.
+
+After executing the above command, you will automatically boot into TWRP recovery.
+Tap on ‘Install‘ and select the ‘Disable-Force-Encryption-Treble.zip‘ file. Then swipe to confirm the installation.
+In the recovery, go to ‘Install’ and select the Magisk zip file to install on your phone.
+After the installation of Magisk, reboot your phone by navigating to  Reboot -> System.
+That is it, and you have successfully rooted your Poco F1. If you are facing any error or difficulty, then do mention them in the comment section below. We will try our best to help you as soon as possible.

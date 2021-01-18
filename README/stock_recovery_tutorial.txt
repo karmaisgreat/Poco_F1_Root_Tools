@@ -1,0 +1,34 @@
+BOOT into TWRP Recovery!
+
+Type the following command:
+adb shell
+
+Now you have access to Super User shell via ADB.
+
+While in TWRP, go to Advanced and tap on File Manager.
+Now go to “dev/block/platform/” then open the “soc” folder if it is there.
+Here you can see folders and files. You will need to open the folders and search for the one called “by-name.” (it should be in one of the folders) In my case it was located in /dev/block/platform/soc/1d94000.ufshc.
+Now we need the name of the folder that contains “by-name”
+example: /dev/block/platform/soc/FOLDER NAME/by-name
+soc – you should also have this folder if present.
+FOLDER NAME – the folder which “by-name” is located in.
+
+Into the terminal type the following command (replace soc and FOLDER NAME respectively):
+ls -al /dev/block/platform/soc/FOLDER NAME/by-name
+Now you will see the partitions of your phone. You will need to locate your boot partition.
+example:
+lpwxrwxrwx 1 root root 25 Feb 15 1970 boot -> /dev/block/sde45 or lpwxrwxrwx 1 root root 25 Feb 15 1970 recovery -> /dev/block/sde49
+PULLING YOUR STOCK BOOT.IMG
+Launch ADB Shell terminal and type the following command (replace sde45 with your partition – see the step above):
+dd if=/dev/block/sde45 of=/sdcard/boot.img
+
+Now type:
+exit
+
+Then type the following:
+adb pull /sdcard/boot.img
+Your stock boot.img should be downloaded into your Minimal ADB Fastboot folder.
+
+Type:
+adb reboot
+And you are done.
